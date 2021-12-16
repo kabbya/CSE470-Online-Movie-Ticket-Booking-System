@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+	<meta charset = "UTF-8" />
+	<title> This is home page </title>
+</head>
+<body>
+	<section>
+		<div class = "container mt-4">	
+			<div class="row">
+				<div class = "col-md-8 offset-md-2">
+					<div class="my-card mt-3">
+					 
+					 	<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert " role="alert">
+  							<p class = "text-center" th:text = "${session.message.content}"> </p>
+  							<th:blcok th:text = "${#session.removeAttribute('message')}"> </th:blcok>
+						</div>
+					
+					   
+						<h1 class = "text-center"> Register here</h1>
+						
+						<form  action="" 
+							   th:action="@{/do_register}" 
+							   method="post" 
+							   th:object="${newUser}"
+					  	>
+						 
+                          <!-- name field-->
+							<div class="mb-3">
+   								
+   								<label for="name_field" class="form-label">Your Name</label>
+    						 	
+    						 	<input
+    						 	    name = "name" 
+    						 		type="text" 
+    						 		class="form-control" 
+    						 		th:classappend="${#fields.hasErrors('name') ? 'is-invalid':' '}"
+    						 		id="name_field" 
+    						 		placeholder="Enter Here"
+    						 		required
+    						 		th:value="${newUser.name}"
+    						 	/>
+    						 	
+    						 	<div class="invalid-feedback" th:each="e : ${#fields.errors('name')}" th:text="${e}">								    
+    						 			 Please provide a valid name.
+   								 </div>
+    							
+  							</div>
+  							
+  						<!-- name field close-->
+  						
+  						
+                          <!-- Phone field-->
+							
+							<div class="mb-3">
+   								
+   								<label for="phone_field" class="form-label">Your Phone Number</label>
+    						 	
+    						 	<input 
+    						 	    name = "phone" 
+    						 		type="number" 
+    						 		class="form-control" 
+    						 		id="phone_field" 
+    						 		placeholder="Enter Here"
+    						 		required
+    						 		th:value="${newUser.phone}"
+    						 	/>
+    							
+  							</div>
+  							
+  						<!-- phone_field close-->
+
+                          <!-- email field-->
+							
+							<div class="mb-3">
+   								
+   								<label for="email_field" class="form-label">Your Email</label>
+    						 	
+    						 	<input 
+    						 		name = "email" 
+    						 		type="email" 
+    						 		class="form-control" 
+    						 		id="email_field" 
+    						 		aria-describedby="emailHelp"
+    						 		placeholder="Enter Here"
+    						 		required
+    						 		th:value="${newUser.email}"
+    						 	/>
+    							
+  							</div>
+  							
+  						<!-- email field close-->
+  						
+                          <!-- password field-->
+							
+							<div class="mb-3">
+   								
+   								<label for="password_field" class="form-label">Your password</label>
+    						 	
+    						 	<input 
+    						 		name = "password"
+    						 		type="password" 
+    						 		class="form-control" 
+    						 		id="password_field" 
+    						 		aria-describedby="passwordHelpInline"
+    						 		placeholder="Enter Here"
+    						 		required
+    						 		th:value="${newUser.password}"
+    						 	/>
+    							
+  							</div>
+  							
+  						<!-- password field close-->
+  						
+  						
+  						<!-- Gender field-->
+							<!--<div class="mb-3">
+   								
+   								<label for="gender_field" class="form-label">Gender</label>
+    							
+    							<select>
+    							     <option selected>Choose...</option>
+     								 <option value="Male">Male</option>
+      								 <option value="Female">Female</option>
+      								 <option value="Others">Others</option>
+    							</select>
+    					
+    						 					
+  							</div>-->
+  							
+  						<!-- Gender field close-->
+  						
+  						
+  						<!-- about field-->
+  							<div class="mb-3">
+							  <label for="exampleFormControlTextarea1" class="form-label">About</label>
+  							  <textarea name = "about"  th:text="${newUser.about}"  placeholder = "Enter something yourself" class="form-control"  rows="3"></textarea>
+							</div>
+  						
+  						<!-- about field close-->
+  						
+  						<!-- terms and condition-->
+  						
+	  						<div class="mb-3 form-check">
+   								
+    						 	<input 
+									type="checkbox" 
+    						 		name = "agreement"
+    						 		class="form-check-input" 
+    						 		id="agreement" 
+    						 	/>
+    							
+    							<label for="agreement" class="form-label">Accept terms and conditions</label>
+    							
+  							</div>
+  							
+  							
+  						  <!-- close terms and condition-->
+
+  							<div class="container text-center">
+  								
+  								<button type = "submit" class="btn bg-primary text-white">
+  									Submit
+  								</button>
+  								
+  								<button type = "reset" class="btn bg-warning ">
+  									Reset
+  								</button>
+  								
+  							</div>
+  							
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</section>
+</body>
+</html>

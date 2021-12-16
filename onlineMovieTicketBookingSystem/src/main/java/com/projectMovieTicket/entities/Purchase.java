@@ -67,6 +67,12 @@ public class Purchase {
 	public void setMovieticket(Movieticket movieticket) {
 		this.movieticket = movieticket;
 	}
+
+	@Override
+	public String toString() {
+		return "Purchase [purchaseId=" + purchaseId + ", quantity=" + quantity + ", paymentStatus=" + paymentStatus
+				+ ", user=" + user + ", movieticket=" + movieticket + "]";
+	}
 	
 	
 }

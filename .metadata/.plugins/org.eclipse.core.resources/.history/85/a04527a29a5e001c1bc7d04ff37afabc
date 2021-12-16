@@ -1,0 +1,29 @@
+package com.projectMovieTicket.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.projectMovieTicket.entities.User;
+
+@Controller
+public class HomeController {
+	
+	
+	// Home Page 
+	
+	@RequestMapping("/")
+	public String home(Model model) {
+		model.addAttribute("title", "Home - Online Movie Ticket Booking System");
+		return "home";
+	}
+	
+	// Registration Page
+	
+	@RequestMapping("/signup")
+	public String signup(Model model) {
+		model.addAttribute("title", "Registration - Online Movie Ticket Booking System");
+		model.addAttribute("newUser", new User() );
+		return "signup";
+	}
+}

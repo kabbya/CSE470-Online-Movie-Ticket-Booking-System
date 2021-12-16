@@ -136,6 +136,14 @@ public class Movieticket {
 	public void setSoldList(List<Purchase> soldList) {
 		this.soldList = soldList;
 	}
+
+	@Override
+	public String toString() {
+		return "Movieticket [movieId=" + movieId + ", name=" + name + ", genre=" + genre + ", day=" + day
+				+ ", startTime=" + startTime + ", date=" + date + ", duration=" + duration + ", totalSeat=" + totalSeat
+				+ ", seatRemaining=" + seatRemaining + ", ticketPrize=" + ticketPrize + ", movieImage=" + movieImage
+				+ ", soldList=" + soldList + "]";
+	}
 	
 	
 	

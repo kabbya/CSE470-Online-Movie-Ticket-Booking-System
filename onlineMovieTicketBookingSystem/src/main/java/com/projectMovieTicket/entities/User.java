@@ -147,6 +147,14 @@ public class User {
 	public void setPurchaseList(List<Purchase> purchaseList) {
 		this.purchaseList = purchaseList;
 	}
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", name=" + name + ", email=" + email + ", password=" + password + ", phone="
+				+ phone + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", about=" + about + ", role=" + role
+				+ ", enable=" + enable + ", imgUrl=" + imgUrl + ", refundAmount=" + refundAmount + ", purchaseList="
+				+ purchaseList + "]";
+	}
 	
 	
 	
