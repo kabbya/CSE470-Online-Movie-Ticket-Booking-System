@@ -1,0 +1,36 @@
+package com.projectMovieTicket_entities;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "DEMO")
+public class demo {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id;
+	String nameString;
+	
+	public demo() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getNameString() {
+		return nameString;
+	}
+	public void setNameString(String nameString) {
+		this.nameString = nameString;
+	}
+	
+	
+}

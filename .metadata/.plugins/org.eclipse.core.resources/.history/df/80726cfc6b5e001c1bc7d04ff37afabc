@@ -1,0 +1,15 @@
+package com.projectMovieTicket_entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "MYTABLE")
+public class Mytable {
+	
+	@Id
+	int id;
+	String nameString;
+
+}

@@ -1,0 +1,31 @@
+package com.projectMovieTicket_entities;
+
+import java.sql.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "MOVIETICKETTABLE")
+public class MovieticketClass {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private String name;
+	private String genre;
+	private String day;
+	private String startTime;
+	
+	private Date date;
+	private Date duration;
+	
+	private int totalSeat;
+	private int seatRemaining;
+	private int ticketPrize;
+	
+	private String movieImage;
+}

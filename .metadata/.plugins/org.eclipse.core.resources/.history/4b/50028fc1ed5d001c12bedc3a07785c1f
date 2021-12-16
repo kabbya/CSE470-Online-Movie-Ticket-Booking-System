@@ -1,0 +1,5 @@
+package com.projectMovieTicket_entities;
+
+public class purchaseClass {
+
+}

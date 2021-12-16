@@ -1,0 +1,18 @@
+package com.projectMovieTicket_entities;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "PURCHASETABLE")
+public class PurchaseClass {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private int quantity;
+	private boolean paymentStatus;
+}

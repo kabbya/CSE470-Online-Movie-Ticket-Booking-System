@@ -1,0 +1,68 @@
+package com.projectMovieTicket_entities;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "PURCHASETABLE")
+public class PurchaseClass {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int purchaseId;
+	private int quantity;
+	private boolean paymentStatus;
+	
+	@ManyToOne
+	private UserClass userInfo;
+	
+	@ManyToOne
+	private MovieticketClass movieInfo;
+
+	public int getPurchaseId() {
+		return purchaseId;
+	}
+
+	public void setPurchaseId(int purchaseId) {
+		this.purchaseId = purchaseId;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public boolean isPaymentStatus() {
+		return paymentStatus;
+	}
+
+	public void setPaymentStatus(boolean paymentStatus) {
+		this.paymentStatus = paymentStatus;
+	}
+
+	public UserClass getUserInfo() {
+		return userInfo;
+	}
+
+	public void setUserInfo(UserClass userInfo) {
+		this.userInfo = userInfo;
+	}
+
+	public MovieticketClass getMovieInfo() {
+		return movieInfo;
+	}
+
+	public void setMovieInfo(MovieticketClass movieInfo) {
+		this.movieInfo = movieInfo;
+	}
+	
+	
+	
+}

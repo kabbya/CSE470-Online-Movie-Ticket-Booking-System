@@ -1,0 +1,10 @@
+package com.projectMovieTicket.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.projectMovieTicket_entities.UserClass;
+
+public interface UserRepository extends JpaRepository<UserClass, Integer>{
+
+	
+}
