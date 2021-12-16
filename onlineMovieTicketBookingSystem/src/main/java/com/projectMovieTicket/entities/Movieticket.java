@@ -19,7 +19,7 @@ public class Movieticket {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int movieId;
-	private String name;
+	private String movieName;
 	private String genre;
 	private String day;
 	private String startTime;
@@ -44,18 +44,21 @@ public class Movieticket {
 	public int getMovieId() {
 		return movieId;
 	}
+	
+	public String getMovieName() {
+		return movieName;
+	}
+
+	public void setMovieName(String movieName) {
+		this.movieName = movieName;
+	}
+	
+	
 
 	public void setMovieId(int movieId) {
 		this.movieId = movieId;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	public String getGenre() {
 		return genre;
@@ -139,13 +142,14 @@ public class Movieticket {
 
 	@Override
 	public String toString() {
-		return "Movieticket [movieId=" + movieId + ", name=" + name + ", genre=" + genre + ", day=" + day
+		return "Movieticket [movieId=" + movieId + ", movieName=" + movieName + ", genre=" + genre + ", day=" + day
 				+ ", startTime=" + startTime + ", date=" + date + ", duration=" + duration + ", totalSeat=" + totalSeat
 				+ ", seatRemaining=" + seatRemaining + ", ticketPrize=" + ticketPrize + ", movieImage=" + movieImage
 				+ ", soldList=" + soldList + "]";
 	}
 	
 	
+
 	
 	
 }

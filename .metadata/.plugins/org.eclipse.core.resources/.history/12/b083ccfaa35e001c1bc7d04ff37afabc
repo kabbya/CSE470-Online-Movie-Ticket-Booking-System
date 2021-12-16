@@ -1,0 +1,5 @@
+package com.projectMovieTicket.config;
+
+public class CustomerUserDetails {
+
+}

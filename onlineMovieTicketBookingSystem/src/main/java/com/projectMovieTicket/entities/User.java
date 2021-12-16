@@ -20,7 +20,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userId;
-	private String name;
+	private String userName;
 	@Column(unique = true)
 	private String email;
 	private String password;
@@ -52,12 +52,13 @@ public class User {
 		this.userId = userId;
 	}
 
-	public String getName() {
-		return name;
+
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getEmail() {
@@ -150,13 +151,12 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", name=" + name + ", email=" + email + ", password=" + password + ", phone="
-				+ phone + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", about=" + about + ", role=" + role
-				+ ", enable=" + enable + ", imgUrl=" + imgUrl + ", refundAmount=" + refundAmount + ", purchaseList="
-				+ purchaseList + "]";
+		return "User [userId=" + userId + ", userName=" + userName + ", email=" + email + ", password=" + password
+				+ ", phone=" + phone + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", about=" + about
+				+ ", role=" + role + ", enable=" + enable + ", imgUrl=" + imgUrl + ", refundAmount=" + refundAmount
+				+ ", purchaseList=" + purchaseList + "]";
 	}
-	
-	
+
 	
 	
 }

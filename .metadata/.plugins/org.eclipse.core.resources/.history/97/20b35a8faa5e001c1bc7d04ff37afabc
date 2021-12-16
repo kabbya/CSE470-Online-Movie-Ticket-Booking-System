@@ -1,0 +1,18 @@
+package com.projectMovieTicket.controller;
+
+import java.security.Principal;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/user")
+public class UserController {
+	
+	@RequestMapping("/index")
+	public String userDashboard(Model model, Principal principal) {
+		model.addAttribute("title", "User Dashboard");
+		return "normaluser/user_dashboard";
+	}
+}
