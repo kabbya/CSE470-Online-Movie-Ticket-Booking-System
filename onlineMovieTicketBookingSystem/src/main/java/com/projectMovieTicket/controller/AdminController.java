@@ -6,15 +6,21 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.security.Principal;
+import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -102,4 +108,23 @@ public class AdminController {
 		
 	}
 	
+	
+	// show upcoming movies Admin view
+	
+	@GetMapping("/show-upcoming-movie/{page}")
+	public String showMovies(@PathVariable("page") Integer page, Model m) {
+				
+		LocalDate localDate = LocalDate.now(); 
+	    Date date = Date.valueOf(localDate);
+	    
+	    Pageable pageable =  PageRequest.of(page, 5);
+	    Page<Movieticket> movietickets = this.movieticketRepository.findByDateGreaterThanEqualOrderByDateAsc(date,pageable);
+		
+		m.addAttribute("title", "Movie list Admin view");
+	    m.addAttribute("movietickets", movietickets);
+		m.addAttribute("currentPage",page);
+		m.addAttribute("totalPages",movietickets.getTotalPages());
+		
+		return "adminuser/show_upcoming_movie";
+	}
 }
