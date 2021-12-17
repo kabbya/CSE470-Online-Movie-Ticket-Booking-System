@@ -5,9 +5,12 @@ import java.security.Principal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.projectMovieTicket.dao.UserRepository;
+import com.projectMovieTicket.entities.Movieticket;
 import com.projectMovieTicket.entities.User;
 
 
@@ -18,13 +21,24 @@ public class AdminController {
 	@Autowired
 	private UserRepository userRepository;
 	
+	@ModelAttribute
+	public void addCommonData(Model model, Principal principal) {
+		String userName = principal.getName();
+		User user = userRepository.getUserByUserName(userName);		
+		model.addAttribute("user", user);
+	}
+	
+	
 	@RequestMapping("/dashboard")
 	public String userDashboard(Model model, Principal principal) {
-		String userName = principal.getName();
-		User user =  userRepository.getUserByUserName(userName);
 		model.addAttribute("title", "Admin Dashboard");
-		model.addAttribute(user);
-		System.out.println("User: " + user);
 		return "adminuser/admin_dashboard";
+	}
+	
+	@GetMapping("/upload-movie")
+	public String uploadMovie(Model model) {
+		model.addAttribute("title","Upload Movie");
+		model.addAttribute("movieticket", new Movieticket () );
+		return "adminuser/upload_movie_form";
 	}
 }

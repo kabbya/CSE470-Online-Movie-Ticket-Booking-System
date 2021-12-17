@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="adminuser/base::layout(~{::section})">
+
+<head>
+	<meta charset = "UTF-8" />
+	<title> This is Movie Upload page </title>
+</head>
+<body>
+	<section>
+		<div class="card me-3 ms-3">
+			<div class="card-body">
+				
+				<h1 class="text-center"> Upload Movie</h1>
+				
+				<div class="container-fluid m1-1">
+				
+				<div class="row">
+					
+					<div class="col-md-10 offset-md-1">
+						
+						<form action="#" 
+							th:object="${movieticket}"
+							enctype="multipart/form-data"
+							method="POST"
+							th:action="@{/admin/process-movie}"
+						>
+						
+						
+						
+						<!--Movie Name-->
+						
+						<div class="input-group mb-3">
+						
+							<span class="input-group-text"> <i class="fa fa-plus"></i> </span>
+							
+						
+							<input
+								name="movieName"
+      							type="text" 
+      							class="form-control" 
+      							id="movie_name_field" 
+      							placeholder="Enter Movie Name here"
+      							required
+      						/>
+      						
+						</div>
+						
+						<!--Movie Genre-->
+						
+						<div class="input-group mb-3">
+							<span class="input-group-text"> <i class="fas fa-compact-disc"></i> </span>
+							
+							<input
+								name="genre"
+      							type="text" 
+      							class="form-control" 
+      							id="movie_genre_field" 
+      							placeholder="Enter Movie Genre here"
+      							required
+      						/>
+      						
+						</div>
+						
+						
+						
+						<!--Movie Ticket Prize-->
+						
+						<div class="input-group mb-3">
+							<span class="input-group-text"> <i class="fas fa-hand-holding-usd"></i> </span>
+							
+							<input
+								name="ticketPrize"
+      							type="text" 
+      							class="form-control" 
+      							id="movie_ticketPrize_field" 
+      							placeholder="Enter Movie Ticket Price here"
+      							required
+      						/>
+      						
+						</div>
+						
+						
+						<!--Start Date-->
+						
+						<div class="input-group mb-3">
+							<span class="input-group-text"> <i class="far fa-calendar-alt"></i> </span>
+							
+							<input
+								name="date"
+      							type="date" 
+      							class="form-control" 
+      							id="movie_date_field" 
+      							placeholder="Enter Movie Date here"
+      							required
+      						>
+      						
+						</div>
+						
+						<!--Start Time-->
+						
+						<div class="input-group mb-3">
+							<span class="input-group-text"> <i class="far fa-clock"></i> </span>
+							
+							<input
+								name="startTime"
+      							type="time" 
+      							class="form-control" 
+      							id="movie_startTime_field" 
+      							placeholder="hh:mm"
+      							required
+      						>
+      						
+						</div>
+						
+						
+						<!--Movie Seat-->
+						
+						<div class="input-group mb-3">
+							<span class="input-group-text"> <i class="fas fa-user"></i> </span>
+							
+							<input
+								name="seatRemaining"
+      							type="text" 
+      							class="form-control" 
+      							id="movie_seatRemaining_field" 
+      							placeholder="Enter Total Seat here"
+      							required
+      						>
+      						
+						</div>
+						
+						<!--Image Field-->
+						<div class="custom-file">
+							<input 
+								type="file" 
+								name="profileImage"
+							/>
+						
+						</div>
+						
+						<div class="container text-center mb-3">
+							
+							<button class="btn btn-outline-primary"> Upload Movie </button>
+							
+						</div>
+						
+					
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</section>
+</body>
+</html>
