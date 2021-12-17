@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normaluser/base::layout(~{::section})">
+
+<head>
+	<meta charset = "UTF-8" />
+	<title> This is Normal User Dashboard. </title>
+</head>
+<body>
+	<section>
+		<div class="container">
+
+			
+			
+			</div>
+		</div>
+	</section>
+</body>
+</html>

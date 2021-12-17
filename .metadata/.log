@@ -810,3 +810,106 @@ java.lang.InterruptedException
 	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
 	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
 	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 2 0 2021-12-17 12:47:31.529
+!MESSAGE Timeout waiting for data to generate LS hover
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:34:49.362
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.qNQTrxBw
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:34:49.367
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.qNQTrxBw
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:34:49.368
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:34:49.368
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.qNQTrxBw => OK
+
+!ENTRY org.eclipse.lsp4e 1 0 2021-12-17 13:35:09.947
+!MESSAGE [Info]	ESLint server running in node v16.9.0
+
+!ENTRY org.eclipse.lsp4e 1 0 2021-12-17 13:35:10.450
+!MESSAGE [Info]	No ES Libary found for file: file:///C:/Users/User/Desktop/470%20online%20movie%20ticket/onlineMovieTicketBookingSystem/src/main/resources/static/js/script.js
+
+!ENTRY org.eclipse.lsp4e 4 0 2021-12-17 13:35:28.360
+!MESSAGE [Error]	[tsserver] npm notice 
+npm notice New major version of npm available! 7.21.1 -> 8.3.0
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v8.3.0>
+npm notice Run `npm install -g npm@8.3.0` to update!
+npm notice 
+
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:51:40.892
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:51:40.895
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@79b8c4de[org.springframework.tooling.boot.ls:1.29.0.202112031705(id=564)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:51:40.896
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.eclipse.lsp4e 2 0 2021-12-17 13:51:42.905
+!MESSAGE Timeout waiting for data to generate LS hover
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:51:46.493
+!MESSAGE Boot LS startup time from start to initialized: 5594ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:51:46.729
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.sDhiIVzoisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:51:46.730
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:51:46.731
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:51:46.732
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:51:46.733
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:51:46.733
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.sDhiIVzo => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:51:46.749
+!MESSAGE classpath=102 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:51:46.754
+!MESSAGE buffering callback sts4.classpath.sDhiIVzo onlineMovieTicketBookingSystem false 102
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:51:46.755
+!MESSAGE executing callback sts4.classpath.sDhiIVzo 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-17 13:51:48.758
+!MESSAGE executing callback sts4.classpath.sDhiIVzo FAILED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2021-12-17 13:51:48.758
+!MESSAGE 
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.springframework.tooling.ls.eclipse.commons.LSP4ECommandExecutor.executeClientCommand(LSP4ECommandExecutor.java:37)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.flush(SendClasspathNotificationsJob.java:178)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
