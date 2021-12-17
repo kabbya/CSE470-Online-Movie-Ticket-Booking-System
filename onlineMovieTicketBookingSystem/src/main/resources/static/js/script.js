@@ -14,4 +14,3 @@ const toggleSidebar = () => {
         $(".content").css("margin-left", "20%");
     }
 };
-

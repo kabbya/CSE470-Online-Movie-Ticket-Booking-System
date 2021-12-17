@@ -30,12 +30,16 @@ public class UserController {
 	@Autowired
 	private MovieticketRepository movieticketRepository;
 	
+	//adding common data
+	
 	@ModelAttribute
 	public void addCommonData(Model model, Principal principal) {
 		String userName = principal.getName();
 		User user = userRepository.getUserByUserName(userName);		
 		model.addAttribute("user", user);
 	}
+	
+	// user dashboard
 	
 	@RequestMapping("/dashboard")
 	public String userDashboard(Model model, Principal principal) {
@@ -61,6 +65,18 @@ public class UserController {
 		
 		return "normaluser/show_upcoming_movie";
 	}	
+	
+	// buy movie tickets
+	
+	@RequestMapping("/buy-movie-ticket/{id}")
+	public String buyMovieTicket(@PathVariable("id") Integer id, Model model) {
+
+		Movieticket movieticket = this.movieticketRepository.getById(id);
+		model.addAttribute("title", movieticket.getMovieName() + " Buy Movie Ticket" );
+		model.addAttribute("movieticket", movieticket);
+
+		return "normaluser/buy_movie_ticket";
+	}
 	
 	
 }

@@ -15,6 +15,7 @@ public class Purchase {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int purchaseId;
 	private int quantity;
+	private String  transactionId;
 	private boolean paymentStatus;
 
 	@ManyToOne
@@ -68,11 +69,21 @@ public class Purchase {
 		this.movieticket = movieticket;
 	}
 
+	
+	public String getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
+	}
+
 	@Override
 	public String toString() {
-		return "Purchase [purchaseId=" + purchaseId + ", quantity=" + quantity + ", paymentStatus=" + paymentStatus
-				+ ", user=" + user + ", movieticket=" + movieticket + "]";
+		return "Purchase [purchaseId=" + purchaseId + ", quantity=" + quantity + ", transactionId=" + transactionId
+				+ ", paymentStatus=" + paymentStatus + ", user=" + user + ", movieticket=" + movieticket + "]";
 	}
+
 	
 	
 }
