@@ -23,7 +23,7 @@
 							th:object="${movieticket}"
 							enctype="multipart/form-data"
 							method="POST"
-							th:action="@{/admin/process-movie}"
+							th:action="@{/admin/process-uploaded-movie}"
 						>
 						
 						
@@ -134,7 +134,7 @@
 						<div class="custom-file">
 							<input 
 								type="file" 
-								name="profileImage"
+								name="movieImageUrl"
 							/>
 						
 						</div>
