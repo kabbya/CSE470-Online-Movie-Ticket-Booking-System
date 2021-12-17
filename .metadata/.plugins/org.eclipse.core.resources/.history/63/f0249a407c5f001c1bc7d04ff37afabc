@@ -13,13 +13,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.projectMovieTicket.dao.MovieticketRepository;
 import com.projectMovieTicket.dao.UserRepository;
 import com.projectMovieTicket.entities.Movieticket;
-import com.projectMovieTicket.entities.Purchase;
 import com.projectMovieTicket.entities.User;
 
 @Controller
@@ -80,18 +78,5 @@ public class UserController {
 		return "normaluser/buy_movie_ticket";
 	}
 	
-	// process buy movie ticket : update database
-	
-	@PostMapping("/process-buy-ticket/{id}")
-	public String processBuyTicket(@ModelAttribute Purchase purchase, @PathVariable("id") Integer id,
-			Principal principal, Model model) {
-		
-		System.out.println("Purchase " + purchase);
-		Movieticket movieticket = this.movieticketRepository.getById(id);
-		model.addAttribute("title", movieticket.getMovieName() + " Buy Movie Ticket" );
-		model.addAttribute("movieticket", movieticket);
-		
-		return "normaluser/buy_movie_ticket";
-	}
 	
 }

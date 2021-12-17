@@ -86,7 +86,6 @@ public class UserController {
 	public String processBuyTicket(@ModelAttribute Purchase purchase, @PathVariable("id") Integer id,
 			Principal principal, Model model) {
 		
-		System.out.println("Purchase " + purchase);
 		Movieticket movieticket = this.movieticketRepository.getById(id);
 		model.addAttribute("title", movieticket.getMovieName() + " Buy Movie Ticket" );
 		model.addAttribute("movieticket", movieticket);
