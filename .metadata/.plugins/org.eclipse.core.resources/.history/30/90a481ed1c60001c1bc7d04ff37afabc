@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normaluser/base::layout(~{::section})">
+
+<head>
+	<meta charset = "UTF-8" />
+	<title> This is My watch list page </title>
+</head>
+<body>
+	<section>	
+			<div class="card ms-3 me-3">
+				
+				<div class="card-body">
+					
+					<h1 class="text-center"> My watch list </h1>
+					
+						 <table class="table mt-3">
+  							<thead>
+    							<tr>
+	    							<th scope="col">Ticket ID</th>
+      								<th scope="col">Name</th>
+      								<th scope="col">Genre</th>
+      								<th scope="col">Date</th>
+      								<th scope="col">Start Time</th>
+      						      	<th scope="col">Ticket Prize</th>
+      						      	<th scope="col">Seat Remaining</th>
+      						      	<th scope="col">Ticket Brought</th>
+      						      	<th scope="col">Action</th>
+      						      	
+    							</tr>
+  							</thead>
+  						<tbody>
+    						<tr th:each="c : ${purchaseList} ">
+    						
+      							<td th:text="${c.getMovieticket().getMovieId()}"></td>
+	    						<td> 
+    								<img scr="" class="my_movie_poster" th:src="@{'/img/'+${c.movieticket.getMovieticket().movieImage}}" alt="movie poster" />
+	   							</td>
+      							<td th:text="${c.getMovieticket().getMovieName()}"></td>
+      							<td th:text="${c.getMovieticket().getGenre()}"></td>
+      							<td th:text="${c.getMovieticket().getDate()}"></td>
+      							<td th:text="${c.getMovieticket().getStartTime()}"></td>
+      							<td th:text="${c.getMovieticket().getTicketPrize()}"></td>
+      							<td th:text="${c.getMovieticket().getSeatRemaining()}"></td>
+      							<td th:text="${c.getMovieticket().getQuantity()}"></td>
+      							
+      							<td>      								
+      								<a href="#" th:href="@{'/user/refund-ticket/'+${c.getMovieticket().getMovieId()}}">
+    	  								<button class="btn btn-primary btn-sm"> Cancel Ticket </button>
+      								</a>  								
+
+      							</td>
+   							</tr>
+  						</tbody>
+					</table>
+				</div>
+			</div>
+	</section>
+</body>
+</html>
