@@ -136,19 +136,24 @@ public class UserController {
 	
 	// show upcoming movies in user's purchase list
 	
-	@GetMapping("/show-user-purchase")
-	public String showUserPurchase(Model m, Principal principal) {
+	@GetMapping("/show-user-purchase/{page}")
+	public String showUserPurchase(@PathVariable("page") Integer page, Model m, Principal principal) {
 		
 		String userName = principal.getName();
 		User user = userRepository.getUserByUserName(userName);
 		
 		LocalDate localDate = LocalDate.now(); 
 		Date date = Date.valueOf(localDate);
-		  
-		List<Purchase> purchaseList = purchaseRepository.getPurchaseByUserAndMovieDate(user.getUserId(), date );
+		
+
+		Pageable pageable = PageRequest.of(page, 3);
+		Page<Purchase> purchaseList = purchaseRepository.getPurchaseByUserAndMovieDate(user.getUserId(), date,pageable );
 		
 		m.addAttribute("title", "My Movie Watchlist");
 		m.addAttribute("purchaseList", purchaseList);
+		m.addAttribute("currentPage", page);
+		m.addAttribute("totalPages", purchaseList.getTotalPages());
+		
 
 		return "normaluser/show_user_purchase";
 
