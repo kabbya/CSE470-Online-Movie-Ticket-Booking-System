@@ -1,0 +1,24 @@
+package com.projectMovieTicket.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.projectMovieTicket.entities.Purchase;
+
+public interface PurchaseRepository extends JpaRepository<Purchase, Integer>{
+
+	@Query("FROM Purchase as c where c.user.userId =: userUserId")
+	List<Purchase> findPurchaseByUser( @Param("userUserId") int userUserId);
+
+	List<Purchase> findByUserUserId(int userId);
+
+	@Query("FROM Purchase as p WHERE p.user.userId =:n")
+		public List<Purchase> getPurchaseByUser(@Param("n") String n);
+
+
+
+
+}

@@ -3,6 +3,7 @@ package com.projectMovieTicket.controller;
 import java.security.Principal;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.projectMovieTicket.dao.MovieticketRepository;
+import com.projectMovieTicket.dao.PurchaseRepository;
 import com.projectMovieTicket.dao.UserRepository;
 import com.projectMovieTicket.entities.Movieticket;
 import com.projectMovieTicket.entities.Purchase;
@@ -31,6 +33,9 @@ public class UserController {
 	
 	@Autowired
 	private MovieticketRepository movieticketRepository;
+	
+	@Autowired
+	private PurchaseRepository purchaseRepository;
 	
 	//adding common data
 	
@@ -86,10 +91,41 @@ public class UserController {
 	public String processBuyTicket(@ModelAttribute Purchase purchase, @PathVariable("id") Integer id,
 			Principal principal, Model model) {
 		
-		System.out.println("Purchase " + purchase);
+
+		String userName = principal.getName(); 
+		User user = this.userRepository.getUserByUserName(userName);
 		Movieticket movieticket = this.movieticketRepository.getById(id);
+		purchase.setUser(user); 
+		purchase.setMovieticket(movieticket);
+		
+		user.getPurchaseList().add(purchase);
+		movieticket.getSoldList().add(purchase);
+		
+		/*
+		 * userRepository.save(user); movieticketRepository.save(movieticket);
+		 */
+		purchaseRepository.save(purchase);
+		
 		model.addAttribute("title", movieticket.getMovieName() + " Buy Movie Ticket" );
 		model.addAttribute("movieticket", movieticket);
+		
+		
+		/*
+		 * List<Purchase> Purchase3 =
+		 * purchaseRepository.findByUserUserId(user.getUserId());
+		 * System.out.println(Purchase3.size());
+		 * 
+		 * List<Purchase> purchase4 =
+		 * purchaseRepository.getPurchaseByUser(user.getUserId());
+		 * System.out.println(purchase4.size());
+		 */
+		
+		LocalDate localDate = LocalDate.now(); 
+	    Date date = Date.valueOf(localDate);
+		
+		List<Purchase> purchase6 = purchaseRepository.getPurchaseByUserAndMovieDate(user.getUserId(), date );
+		System.out.println(purchase6.size());
+		
 		
 		return "normaluser/buy_movie_ticket";
 	}

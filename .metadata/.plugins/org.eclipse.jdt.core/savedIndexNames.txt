@@ -6,7 +6,6 @@ INDEX VERSION 1.131+C:\Users\User\Desktop\470 online movie ticket\.metadata\.plu
 1622331885.index
 2814053809.index
 874585963.index
-2415979895.index
 1926353209.index
 1915427771.index
 264541099.index
