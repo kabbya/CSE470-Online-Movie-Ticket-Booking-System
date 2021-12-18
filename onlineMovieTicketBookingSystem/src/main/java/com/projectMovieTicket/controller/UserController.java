@@ -3,7 +3,8 @@ package com.projectMovieTicket.controller;
 import java.security.Principal;
 import java.sql.Date;
 import java.time.LocalDate;
-import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -23,6 +24,7 @@ import com.projectMovieTicket.dao.UserRepository;
 import com.projectMovieTicket.entities.Movieticket;
 import com.projectMovieTicket.entities.Purchase;
 import com.projectMovieTicket.entities.User;
+import com.projectMovieTicket.helper.Message;
 
 @Controller
 @RequestMapping("/user")
@@ -85,49 +87,51 @@ public class UserController {
 		return "normaluser/buy_movie_ticket";
 	}
 	
+	
 	// process buy movie ticket : update database
 	
 	@PostMapping("/process-buy-ticket/{id}")
-	public String processBuyTicket(@ModelAttribute Purchase purchase, @PathVariable("id") Integer id,
-			Principal principal, Model model) {
+	public String processBuyTicket(@ModelAttribute Purchase purchase, 
+			@PathVariable("id") Integer id,
+			Principal principal, Model model,
+			HttpSession session) {
 		
-
-		String userName = principal.getName(); 
-		User user = this.userRepository.getUserByUserName(userName);
 		Movieticket movieticket = this.movieticketRepository.getById(id);
-		purchase.setUser(user); 
-		purchase.setMovieticket(movieticket);
-		
-		user.getPurchaseList().add(purchase);
-		movieticket.getSoldList().add(purchase);
-		
-		/*
-		 * userRepository.save(user); movieticketRepository.save(movieticket);
-		 */
-		purchaseRepository.save(purchase);
-		
 		model.addAttribute("title", movieticket.getMovieName() + " Buy Movie Ticket" );
 		model.addAttribute("movieticket", movieticket);
 		
+		try {
+			
+			if( purchase.getQuantity() <=0 ) {
+				throw new Exception("No seat has been selected.");
+			}
+			
+			if( movieticket.getSeatRemaining()-purchase.getQuantity() < 0 ) {
+				throw new Exception("We don't have enough seats.");
+			}
+				
+			movieticket.setSeatRemaining( movieticket.getSeatRemaining() - purchase.getQuantity() );
+			
+			String userName = principal.getName(); 
+			User user = this.userRepository.getUserByUserName(userName);
+			
+			purchase.setUser(user); 
+			purchase.setMovieticket(movieticket);
+			
+			user.getPurchaseList().add(purchase);
+			movieticket.getSoldList().add(purchase);
+			
+			purchaseRepository.save(purchase);
+			session.setAttribute("message", new Message("Ticket successfully purchased.", "success"));
+			
+			return "normaluser/buy_movie_ticket";
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.setAttribute("message", new Message("Something went wrong. " + e.getMessage(), "danger"));
+			return "normaluser/buy_movie_ticket";
+		}
 		
-		/*
-		 * List<Purchase> Purchase3 =
-		 * purchaseRepository.findByUserUserId(user.getUserId());
-		 * System.out.println(Purchase3.size());
-		 * 
-		 * List<Purchase> purchase4 =
-		 * purchaseRepository.getPurchaseByUser(user.getUserId());
-		 * System.out.println(purchase4.size());
-		 */
-		
-		LocalDate localDate = LocalDate.now(); 
-	    Date date = Date.valueOf(localDate);
-		
-		List<Purchase> purchase6 = purchaseRepository.getPurchaseByUserAndMovieDate(user.getUserId(), date );
-		System.out.println(purchase6.size());
-		
-		
-		return "normaluser/buy_movie_ticket";
 	}
 	
 }
