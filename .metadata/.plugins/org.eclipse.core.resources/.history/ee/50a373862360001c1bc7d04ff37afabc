@@ -33,7 +33,7 @@
   						<tbody>
     						<tr th:each="c : ${purchaseList} ">
     						
-      							<td th:text="${c.getPurchaseId()}"></td>
+      							<td th:text="${c.getMovieticket().getMovieId()}"></td>
 	    						<td> 
     								<img scr="" class="my_movie_poster" th:src="@{'/img/'+${c.getMovieticket().getMovieImage}}" alt="movie poster" />
 	   							</td>

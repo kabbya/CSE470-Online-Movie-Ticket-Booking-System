@@ -25,7 +25,7 @@ public interface PurchaseRepository extends JpaRepository<Purchase, Integer>{
 	public List<Purchase> getPurchaseByUserAndMovieGenre(@Param("n") int n, @Param("m") String m);
 	
 
-	@Query("FROM Purchase as p WHERE p.user.userId =:n and p.movieticket.date >=:m ORDER BY p.movieticket.date")
+	@Query("FROM Purchase as p WHERE p.user.userId =:n and p.movieticket.date >=:m")
 	public Page<Purchase> getPurchaseByUserAndMovieDate(@Param("n") int n, @Param("m") Date m, Pageable pePageable);
 	
 
