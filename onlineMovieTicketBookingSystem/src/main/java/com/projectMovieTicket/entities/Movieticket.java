@@ -145,7 +145,7 @@ public class Movieticket {
 		return "Movieticket [movieId=" + movieId + ", movieName=" + movieName + ", genre=" + genre + ", day=" + day
 				+ ", startTime=" + startTime + ", date=" + date + ", duration=" + duration + ", totalSeat=" + totalSeat
 				+ ", seatRemaining=" + seatRemaining + ", ticketPrize=" + ticketPrize + ", movieImage=" + movieImage
-				+ ", soldList=" + soldList + "]";
+				+ "]";
 	}
 	
 	

@@ -8,8 +8,10 @@ import java.nio.file.StandardCopyOption;
 import java.security.Principal;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
+import javax.xml.transform.Source;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -96,7 +98,7 @@ public class AdminController {
 			
 			session.setAttribute("message", new Message("New Movie has been successfully uploaded", "success"));
 			
-			movieticket.setTotalSeat(movieticket.getSeatRemaining());
+			movieticket.setSeatRemaining(movieticket.getTotalSeat());
 			movieticketRepository.save(movieticket);
 		}
 		catch (Exception e) {
@@ -127,4 +129,82 @@ public class AdminController {
 		
 		return "adminuser/show_upcoming_movie";
 	}
+	
+	
+	// update movie form
+	
+	
+	@GetMapping("/update-movie-form/{id}")
+	public String updateMovieForm(@PathVariable("id") Integer id,Model m) {
+		
+		Optional <Movieticket> movieTiketOptional = this.movieticketRepository.findById(id);
+		Movieticket movieticket = movieTiketOptional.get();
+
+		m.addAttribute("Title","Update Movie");
+		m.addAttribute("movieticket", movieticket);
+		return "adminuser/update_movie_form";
+	}
+	
+	
+	// update movie process
+	
+	@PostMapping("/process-movie-update/{id}")
+	public String movieUpdateProcess(
+			@PathVariable("id") Integer id,
+			@ModelAttribute Movieticket movieticket,
+			@RequestParam("movieImageUrl") MultipartFile file,
+			Model m, HttpSession session) {
+
+
+		 	Optional<Movieticket> movieTiketOptional = movieticketRepository.findById(id);
+		 	Movieticket oldMovieTicketDetails = movieTiketOptional.get();
+			
+		 	try {
+				
+				if( oldMovieTicketDetails.getTotalSeat() > movieticket.getTotalSeat() ) {
+					throw new Exception("You can not decrease total seat.");
+				}
+				else {
+	
+					int extra_seat = movieticket.getTotalSeat() - oldMovieTicketDetails.getTotalSeat();
+					movieticket.setSeatRemaining( oldMovieTicketDetails.getSeatRemaining() + extra_seat);
+				}
+				
+				if(!file.isEmpty()) {
+					
+					//delete
+					File deleteFile =  new ClassPathResource("static/img").getFile();
+					File file1= new File(deleteFile, oldMovieTicketDetails.getMovieImage());
+					file1.delete();
+					
+					
+					//update
+					File saveFile =  new ClassPathResource("static/img").getFile();
+					Path path =   Paths.get(saveFile.getAbsolutePath()+File.separator+file.getOriginalFilename());
+					Files.copy(file.getInputStream(), path , StandardCopyOption.REPLACE_EXISTING);
+					movieticket.setMovieImage(file.getOriginalFilename());
+				}
+				else {
+					movieticket.setMovieImage(oldMovieTicketDetails.getMovieImage());
+				}
+				
+				movieticket.setMovieId(oldMovieTicketDetails.getMovieId());
+				movieticket.setStartTime(oldMovieTicketDetails.getStartTime());
+				this.movieticketRepository.save(movieticket);
+				
+				session.setAttribute("message", new Message("Movie Updated Successfully.", "success"));
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+
+				m.addAttribute("Title","Update Movie");
+				m.addAttribute("movieticket", oldMovieTicketDetails);
+				session.setAttribute("message", new Message("Something went wrong. " + e.getMessage(), "danger"));
+			}
+			
+
+			m.addAttribute("Title","Update Movie");
+			m.addAttribute("movieticket", movieticket);
+			return "adminuser/update_movie_form";
+		}	
 }

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="adminuser/base::layout(~{::section})">
+
+<head>
+	<meta charset = "UTF-8" />
+	<title> This is Normal User Dashboard. </title>
+</head>
+<body>
+	<section>
+	<div class="card me-3 ms-3">
+			<div class="card-body">
+				
+				<h1 class="text-center"> Update Movie</h1>
+				
+				<div class="container-fluid m1-1">
+				
+				<div class="row">
+					
+					<div class="col-md-10 offset-md-1">
+						
+						<form action="#" 
+							th:object="${movieticket}"
+							enctype="multipart/form-data"
+							method="POST"
+							th:action="@{'/admin/process-movie-update/'+${movieticket.movieId}}"
+						>
+						
+						
+						<!-- movie id-->
+						<!--<input
+							type="text"
+							th:value="${movieticket.movieId}"
+							name = "id";
+						
+						/>-->
+												
+						<!--Movie Name-->
+						
+						<div class="input-group mb-3">
+						
+							<span class="input-group-text"> <i class="fa fa-plus"></i> </span>
+							
+						
+							<input
+								th:value="${movieticket.movieName}"
+								name="movieName"
+      							type="text" 
+      							class="form-control" 
+      							id="movie_name_field" 
+      							placeholder="Update Your Movie Name here"
+      						/>
+      						
+						</div>
+						
+						<!--Movie Genre-->
+						
+						<div class="input-group mb-3">
+							<span class="input-group-text"> <i class="fas fa-compact-disc"></i> </span>
+							
+							<input
+								th:value="${movieticket.genre}"
+								name="genre"
+      							type="text" 
+      							class="form-control" 
+      							id="movie_genre_field" 
+      							placeholder="Update Movie Genre here"
+      						
+      						/>
+      						
+						</div>
+						
+						
+						
+						<!--Movie Ticket Prize-->
+						
+						<div class="input-group mb-3">
+							<span class="input-group-text"> <i class="fas fa-hand-holding-usd"></i> </span>
+							
+							<input
+							    th:value="${movieticket.ticketPrize}"
+								name="ticketPrize"
+      							type="text" 
+      							class="form-control" 
+      							id="movie_ticketPrize_field" 
+      							placeholder="Enter Movie Ticket Price here"
+      							required
+      						/>
+      						
+						</div>
+						
+						
+						<!--Start Date-->
+						
+						<div class="input-group mb-3">
+							<span class="input-group-text"> <i class="far fa-calendar-alt"></i> </span>
+							
+							<input
+							
+							    th:value="${movieticket.date}"
+								name="date"
+      							type="date" 
+      							class="form-control" 
+      							id="movie_date_field" 
+      							placeholder="Enter Movie Date here"
+      							required
+      						>
+      						
+						</div>
+						
+						<!--Start Time-->
+						
+						
+						
+						
+						<!--Movie Seat-->
+						
+						<div class="input-group mb-3">
+							<span class="input-group-text"> <i class="fas fa-user"></i> </span>
+							
+							<input
+							
+							    th:value="${movieticket.totalSeat}"
+								name="totalSeat"
+      							type="text" 
+      							class="form-control" 
+      							id="movie_totalSeat_field" 
+      							placeholder="Enter Total Seat here"
+      							required
+      						>
+      						
+						</div>
+						
+						<!--Image Field-->
+						
+						<div class="container">
+							<img style="width: 150px; height: 150px;" class="img-fluid .my_user_profile2" src="" th:src="@{'/img/'+${movieticket.movieImage}}" alt="" />
+						</div>
+
+						
+						
+						<div class="custom-file">
+							<input 
+								type="file" 
+								name="movieImageUrl"
+							/>
+						
+						</div>
+												
+						<div class="container text-center mb-3">
+							
+							<button class="btn btn-outline-primary"> Update Movie </button>
+							
+						</div>
+						
+					
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</section>
+</body>
+</html>
