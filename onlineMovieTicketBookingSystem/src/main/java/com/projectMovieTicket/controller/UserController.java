@@ -38,6 +38,8 @@ public class UserController {
 
 	@Autowired
 	private PurchaseRepository purchaseRepository;
+	
+	
 
 	// adding common data
 
@@ -56,8 +58,11 @@ public class UserController {
 		return "normaluser/user_dashboard";
 	}
 
+	
+	
 	// show upcoming movies Normal User view
 
+	
 	@GetMapping("/show-upcoming-movie/{page}")
 	public String showMovies(@PathVariable("page") Integer page, Model m) {
 
@@ -133,7 +138,9 @@ public class UserController {
 	}
 
 	
+	
 	// show upcoming movies in user's purchase list
+	
 	
 	@GetMapping("/show-user-purchase/{page}")
 	public String showUserPurchase(@PathVariable("page") Integer page, Model m, Principal principal) {
@@ -143,10 +150,10 @@ public class UserController {
 		
 		LocalDate localDate = LocalDate.now(); 
 		Date date = Date.valueOf(localDate);
-		
+		int status = 1;
 
 		Pageable pageable = PageRequest.of(page, 3);
-		Page<Purchase> purchaseList = purchaseRepository.getPurchaseByUserAndMovieDate(user.getUserId(), date,pageable );
+		Page<Purchase> purchaseList = purchaseRepository.getPurchaseByUserAndMovieDateAndPaymentStatus(user.getUserId(), date, status, pageable );
 		
 		m.addAttribute("title", "My Movie Watchlist");
 		m.addAttribute("purchaseList", purchaseList);
@@ -157,5 +164,29 @@ public class UserController {
 		return "normaluser/show_user_purchase";
 
 	}
+	
+	
 
+	// show user transaction history
+	
+	
+	@GetMapping("/show-user-transaction/{page}")
+	public String showUserTransaction(@PathVariable("page") Integer page, Model m, Principal principal) {
+		
+		String userName = principal.getName();
+		User user = userRepository.getUserByUserName(userName);	
+
+		Pageable pageable = PageRequest.of(page, 5);
+		Page<Purchase> purchaseList = purchaseRepository.getPurchaseByUser(user.getUserId(),pageable );
+		
+		m.addAttribute("title", "My Movie Watchlist");
+		m.addAttribute("purchaseList", purchaseList);
+		m.addAttribute("currentPage", page);
+		m.addAttribute("totalPages", purchaseList.getTotalPages());
+		
+
+		return "normaluser/show_user_transaction";
+
+	}
+	
 }

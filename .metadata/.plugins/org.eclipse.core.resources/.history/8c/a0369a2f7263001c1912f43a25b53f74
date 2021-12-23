@@ -1,0 +1,36 @@
+package com.projectMovieTicket.dao;
+
+import java.sql.Date;
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.projectMovieTicket.entities.Purchase;
+
+public interface PurchaseRepository extends JpaRepository<Purchase, Integer>{
+	
+	List<Purchase> findByUserUserId(int userId);
+
+	@Query("FROM Purchase as c where c.user.userId =: userUserId")
+	List<Purchase> findPurchaseByUser( @Param("userUserId") int userUserId);
+
+	@Query("FROM Purchase as p WHERE p.user.userId =:n")
+	public List<Purchase> getPurchaseByUser(@Param("n") int n);
+	
+	@Query("FROM Purchase as p WHERE p.user.userId =:n and p.movieticket.genre =:m")
+	public List<Purchase> getPurchaseByUserAndMovieGenre(@Param("n") int n, @Param("m") String m);
+	
+
+	@Query("FROM Purchase as p WHERE p.user.userId =:n and p.movieticket.date >=:m ORDER BY p.movieticket.date")
+	public Page<Purchase> getPurchaseByUserAndMovieDate(@Param("n") int n, @Param("m") Date m, Pageable pePageable);
+
+	@Query("FROM Purchase as p WHERE p.paymentStatus =:i and p.movieticket.date >=:m")
+	public Page<Purchase> getPurchaseByPaymentStatusAndMovieDate(@Param("i") int i,  @Param("m") Date m,Pageable pePageable);
+	
+
+
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="adminuser/base::layout(~{::section})">
+
+<head>
+	<meta charset = "UTF-8" />
+	<title> This is My watch list page </title>
+</head>
+<body>
+	<section>	
+			<div class="card ms-3 me-3">
+				
+				<div class="card-body">
+					
+					<h1 class="text-center"> Payment Statements </h1>
+					
+						 <table class="table mt-3">
+  							<thead>
+    							<tr>
+	    							<th scope="col">Ticket ID</th>
+      								<th scope="col">Movie Name</th>
+      								<th scope="col">Ticket Price</th>
+      								<th scope="col">Ticket Purchased</th>					
+      								<th scope="col">Total Payable</th>
+      								<th scope="col">User Name</th>
+      								<th scope="col">Contact</th>
+      								<th scope="col">Transaction Id</th>
+      						      	<th scope="col">Transaction Number</th>
+      						      	<th scope="col">Action</th>
+      						      	
+    							</tr>
+  							</thead>
+  						<tbody>
+    						<tr th:each="c : ${purchaseList} ">
+    						
+      							<td th:text="${c.getPurchaseId()}"></td>      							
+      							<td th:text="${c.getMovieticket().getMovieName()}"></td>					
+      							<td th:text="${c.getMovieticket().getTicketPrize()}"></td>
+      							<td th:text="${c.getQuantity()}"></td>
+      							<td th:text="${c.getMovieticket().getTicketPrize() * c.getQuantity()}"></td>
+      							<td th:text="${c.getUser.getUserName}"></td>
+      							<td th:text="${c.getUser.getEmail}"></td>
+      						    <td th:text="${c.getTransactionId()}"></td>
+      						    <td th:text="${c.getTransactionNumber()}"></td>
+      							<td>      								
+      								<a href="#" th:href="@{'/admin/update-payment-status/'+${c.getPurchaseId()(param1=1)} }">
+      									
+    	  								<button  class="btn btn-primary btn-sm"> Approve </button>
+      								</a> 
+      								
+      								<a href="#" th:href="@{'/admin/update-payment-status/'+${c.getPurchaseId()} }">
+    	  								<button class="btn btn-danger btn-sm"> Reject </button>
+      								</a>						
+
+      							</td>
+   							</tr>
+  						</tbody>
+					</table>
+					
+					<!--Pagination-->
+					
+					<nav aria-label="Page navigation example">
+					
+						  <ul class="pagination">
+							    <li th:if="${currentPage != 0}" class="page-item">
+							    <a th:href="@{'/user/show-payment-transaction/'+${currentPage-1}}"  class="page-link" href="#">Previous</a></li>
+							    
+							    <li th:classappend="${currentPage==iter-1?'active':''}"
+							    th:each="iter : ${#numbers.sequence(1,totalPages)}" 
+							    class="page-item">
+							    
+							    <a th:href="@{'/user/show-payment-transaction/'+${iter-1}}" class="page-link" href="#"> 
+							    <span th:text="${iter}"> </span>
+							    </a></li>
+							    
+							    <li th:if="${currentPage+1 != totalPages}" class="page-item">
+							    <a th:href="@{'/user/show-payment-transaction/'+${currentPage+1}}" class="page-link" href="#">Next</a></li>
+							</ul>	
+					</nav>
+				</div>
+			</div>
+	</section>
+</body>
+</html>

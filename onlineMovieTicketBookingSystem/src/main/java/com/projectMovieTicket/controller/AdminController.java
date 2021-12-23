@@ -11,7 +11,6 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
-import javax.xml.transform.Source;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -29,10 +28,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.projectMovieTicket.dao.MovieticketRepository;
+import com.projectMovieTicket.dao.PurchaseRepository;
 import com.projectMovieTicket.dao.UserRepository;
 import com.projectMovieTicket.entities.Movieticket;
+import com.projectMovieTicket.entities.Purchase;
 import com.projectMovieTicket.entities.User;
 import com.projectMovieTicket.helper.Message;
+
 
 
 @Controller
@@ -44,6 +46,9 @@ public class AdminController {
 	
 	@Autowired
 	private MovieticketRepository movieticketRepository;
+	
+	@Autowired
+	private PurchaseRepository purchaseRepository;
 	 
 	// adding common data
 	
@@ -109,6 +114,7 @@ public class AdminController {
 		return "adminuser/upload_movie_form";
 		
 	}
+	
 	
 	
 	// show upcoming movies Admin view
@@ -206,5 +212,63 @@ public class AdminController {
 			m.addAttribute("Title","Update Movie");
 			m.addAttribute("movieticket", movieticket);
 			return "adminuser/update_movie_form";
-		}	
+		}
+	
+	
+	//Show and update Payment Transaction
+	
+	@GetMapping("/show-payment-transaction/{page}")
+	public String showPaymentTransaction(@PathVariable("page") Integer page, Model m) {
+		
+		LocalDate localDate = LocalDate.now(); 
+		Date date = Date.valueOf(localDate);
+		int status=0;
+		
+		Pageable pageable = PageRequest.of(page, 2);
+		Page<Purchase> purchaseList =  purchaseRepository.getPurchaseByPaymentStatusAndMovieDate(status,date,pageable);
+		
+		m.addAttribute("title", "Payment Transaction");
+		m.addAttribute("purchaseList", purchaseList);
+		m.addAttribute("currentPage", page);
+		m.addAttribute("totalPages", purchaseList.getTotalPages());
+		
+		return "adminuser/show_payment_transaction";
+	}
+	
+	
+	// process update payment status of the user
+	
+	@GetMapping("/update-payment-status/{id}")
+	public String updatePaymentStatus(
+			@PathVariable("id") Integer id,
+			@RequestParam( value = "actionValue") Integer actionValue,
+			Model m, HttpSession session) {
+			
+			Optional<Purchase> purchaseOptional = purchaseRepository.findById(id);
+			Purchase purchase = purchaseOptional.get();
+			
+			purchase.setPaymentStatus(actionValue);
+			this.purchaseRepository.save(purchase);
+					
+			return "redirect:/admin/show-payment-transaction/0";
+		}
+	
+	
+	//Show All Payment Transaction
+	
+	@GetMapping("/show-all-payment-transaction/{page}")
+	public String showAllPaymentTransaction(@PathVariable("page") Integer page, Model m) {
+		
+		Pageable pageable = PageRequest.of(page, 10);
+		Page<Purchase> purchaseList =  purchaseRepository.findAllOrderByMovieticketDateAsc(pageable);
+		
+		m.addAttribute("title", "Payment Transaction");
+		m.addAttribute("purchaseList", purchaseList);
+		m.addAttribute("currentPage", page);
+		m.addAttribute("totalPages", purchaseList.getTotalPages());
+		
+		return "adminuser/show_all_payment_transaction";
+	}
+	
+	
 }

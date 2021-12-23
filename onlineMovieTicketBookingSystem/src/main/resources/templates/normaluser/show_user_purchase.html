@@ -20,12 +20,12 @@
 	    							<th scope="col">Ticket ID</th>
 	    							<th scope="col"></th>
       								<th scope="col">Name</th>
-      								<th scope="col">Genre</th>
       								<th scope="col">Date</th>
       								<th scope="col">Start Time</th>
       						      	<th scope="col">Ticket Prize</th>
       						      	<th scope="col">Seat Remaining</th>
       						      	<th scope="col">Ticket Brought</th>
+      						      	<th scope="col">Payment Status</th>
       						      	<th scope="col">Action</th>
       						      	
     							</tr>
@@ -39,12 +39,19 @@
 	   							</td>
       							
       							<td th:text="${c.getMovieticket().getMovieName()}"></td>
-      							<td th:text="${c.getMovieticket().getGenre()}"></td>
       							<td th:text="${c.getMovieticket().getDate()}"></td>
       							<td th:text="${c.getMovieticket().getStartTime()}"></td>
       							<td th:text="${c.getMovieticket().getTicketPrize()}"></td>
       							<td th:text="${c.getMovieticket().getSeatRemaining()}"></td>
-      							<td th:text="${c.getQuantity()}"></td>
+      							
+      							<td th:text="${c.getPaymentStatus()}"></td>
+      							
+      							<td th:switch="${c.getPaymentStatus()}"> 
+									  <span th:case="0" style="background-color:yellow">On Process</span>
+									  <span th:case="1" style="background-color:green">Confirmed</span>
+									  <span th:case="2" style="background-color:red">Rejected</span> 
+								</td>
+									      						
       							
       							<td>      								
       								<a href="#" th:href="@{'/user/refund-ticket/'+${c.getMovieticket().getMovieId()}}">
