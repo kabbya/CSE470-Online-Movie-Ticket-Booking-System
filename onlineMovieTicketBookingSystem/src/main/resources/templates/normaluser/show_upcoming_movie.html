@@ -56,7 +56,7 @@
 					
 					<nav aria-label="Page navigation example">
 					
-						  <ul class="pagination">
+						  <ul th:if="${totalPages != 0}" class="pagination">
 							    <li th:if="${currentPage != 0}" class="page-item">
 							    <a th:href="@{'/user/show-upcoming-movie/'+${currentPage-1}}"  class="page-link" href="#">Previous</a></li>
 							    

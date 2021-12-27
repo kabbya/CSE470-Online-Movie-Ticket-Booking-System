@@ -11,6 +11,15 @@
 			<div class="card ms-3 me-3">
 				
 				<div class="card-body">
+						
+						<!--message box-->
+					
+						<div th:if="${session.message}" class="container">
+					    	<div th:classappend="${'alert-'+session.message.type}" class="alert text-center" role="alert">
+					    			<span th:text="${session.message.content}"></span>
+							</div>
+							<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+				        </div>
 					
 					<h1 class="text-center"> My watch list </h1>
 					
@@ -44,7 +53,7 @@
       							<td th:text="${c.getMovieticket().getTicketPrize()}"></td>
       							<td th:text="${c.getMovieticket().getSeatRemaining()}"></td>
       							
-      							<td th:text="${c.getPaymentStatus()}"></td>
+      							<td th:text="${c.getQuantity()}"></td>
       							
       							<td th:switch="${c.getPaymentStatus()}"> 
 									  <span th:case="0" style="background-color:yellow">On Process</span>
@@ -54,7 +63,7 @@
 									      						
       							
       							<td>      								
-      								<a href="#" th:href="@{'/user/refund-ticket/'+${c.getMovieticket().getMovieId()}}">
+      								<a href="#" th:href="@{'/user/user-refund-ticket/'+${c.getPurchaseId() }}">
     	  								<button class="btn btn-primary btn-sm"> Cancel Ticket </button>
       								</a> 						
 
@@ -67,7 +76,8 @@
 					
 					<nav aria-label="Page navigation example">
 					
-						  <ul class="pagination">
+						  <ul th:if="${totalPages != 0}" class="pagination">
+						  		
 							    <li th:if="${currentPage != 0}" class="page-item">
 							    <a th:href="@{'/user/show-user-purchase/'+${currentPage-1}}"  class="page-link" href="#">Previous</a></li>
 							    

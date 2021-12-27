@@ -1,8 +1,10 @@
 package com.projectMovieTicket.controller;
 
+
 import java.security.Principal;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
 
@@ -160,6 +162,7 @@ public class UserController {
 		m.addAttribute("currentPage", page);
 		m.addAttribute("totalPages", purchaseList.getTotalPages());
 		
+		System.out.println(purchaseList.getTotalPages());
 
 		return "normaluser/show_user_purchase";
 
@@ -197,6 +200,87 @@ public class UserController {
 		model.addAttribute("Title", "Profile Page");
 		return "normaluser/user_profile";
 	}
+	
+	
+	// refund ticket
+	
+	@GetMapping("/user-refund-ticket/{id}")
+	public String userRefundTicket(@PathVariable("id") Integer id, Model model, Principal principal) {
+
+		  Optional<Purchase> purchaseOptional = purchaseRepository.findById(id);
+		  Purchase purchase = purchaseOptional.get();
+		 		
+		  Optional<Movieticket> movieticketOptional = movieticketRepository.findById( purchase.getMovieticket().getMovieId());
+		  Movieticket movieticket = movieticketOptional.get();
+			  
+		  model.addAttribute("title", "Refund Movie Ticket");
+		  model.addAttribute("movieticket", movieticket);
+		  model.addAttribute("purchase",purchase);
+			 
+		  return "normaluser/user_refund_ticket";
+	}
+	
+	
+	
+	// process refund movie ticket
+	
+	@PostMapping("/process-refund-ticket/{id}")
+	public String processRefundTicket(@ModelAttribute Purchase purchase, 
+			@PathVariable("id") Integer id,
+			Principal principal, Model model,
+			HttpSession session) {
+		
+		
+		Optional<Purchase> purchaseOptional = purchaseRepository.findById(id);
+		Purchase oldPurchase = purchaseOptional.get();
+		
+		Optional<Movieticket> movieticketOptional = movieticketRepository.findById( oldPurchase.getMovieticket().getMovieId());
+		Movieticket movieticket = movieticketOptional.get();
+		
+		String userName = principal.getName();
+		User user = userRepository.getUserByUserName(userName);
+				
+		try {
+			
+
+			if(purchase.getQuantity()<=0) {
+				throw new Exception("Invalid Input.");
+			}
+			
+			else if( oldPurchase.getQuantity() < purchase.getQuantity() ) {
+				throw new Exception("You have not purchased that many tickets.");
+				
+			}
+			
+			else {
+				
+				int curQuantity = oldPurchase.getQuantity() - purchase.getQuantity();
+				int refundMoney = curQuantity * movieticket.getTicketPrize();
+				oldPurchase.setQuantity(curQuantity);
+				user.setRefundAmount(refundMoney + user.getRefundAmount());
+				movieticket.setSeatRemaining(purchase.getQuantity()+movieticket.getSeatRemaining());
+				userRepository.save(user);
+				movieticketRepository.save(movieticket);
+				
+				if(oldPurchase.getQuantity()==0) {
+					purchaseRepository.deleteById(oldPurchase.getPurchaseId());
+					session.setAttribute("message", new Message("Ticket has been successfully refunded.", "success"));
+					return "redirect:/user/show-user-purchase/0";
+				}
+				
+				session.setAttribute("message", new Message("Ticket has been successfully refunded.", "success"));
+			}
+			
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			session.setAttribute("message", new Message("Something went wrong. " + e.getMessage(), "danger"));
+		}
+		
+		
+		return "redirect:/user/user-refund-ticket/"+oldPurchase.getPurchaseId();
+	}
+
 	
 	
 }

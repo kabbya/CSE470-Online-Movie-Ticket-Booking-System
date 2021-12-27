@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normaluser/base::layout(~{::section})">
+
+<head>
+	<meta charset = "UTF-8" />
+	<title> This is Movie Buying Page. </title>
+</head>
+<body>
+	<section>
+		
+		<div class="card ms-3 me-3">
+			<div class="card-body">
+			
+						<!--message box-->
+					
+						<div th:if="${session.message}" class="container">
+					    	<div th:classappend="${'alert-'+session.message.type}" class="alert text-center" role="alert">
+					    			<span th:text="${session.message.content}"></span>
+							</div>
+							<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+				        </div>			
+					
+					<div class="container-fluid m1-1">
+					
+						<div class="row">
+							<div class="my_div_left">
+							<img scr=""  class="my_movie_poster_single" th:src="@{'/img/'+${movieticket.movieImage}}" alt="movie poster" />
+						
+							</div>
+						
+								<div class="my_div_middle">
+									<h3 class="mt-3"> <pre>Movie Name      <span> <i class="fas fa-film"></i> <span th:text= "${movieticket.movieName}"> </span> </pre></h3>
+									<h3 class="mt-3"> <pre>Genre           <span> <i class="fas fa-compact-disc"></i> </span><span th:text= "${movieticket.genre}"> </span> </pre> </h3> 	 	
+									<h3 class="mt-3"> <pre>Date            <span> <i class="far fa-calendar-alt"></i> <span th:text= "${movieticket.date}"> </span> </pre> </h3> 	
+									<h3 class="mt-3"> <pre>Start Time      <span> <i class="far fa-clock"></i> </span><span th:text= "${movieticket.startTime}"> </span></pre> </h3> 	
+									<h3 class="mt-3"> <pre>Seat Booked     <span> <i class="fas fa-user"></i> </span><span th:text= "${purchase.quantity}"> </span></pre> </h3> 	
+									<h3 class="mt-3"> <pre>Ticket Price    <span> <i class="fas fa-hand-holding-usd"></i> </span><span th:text= "${movieticket.ticketPrize}"> </span> Taka</pre> </h3> 	
+									<h3 class="mt-3"> <pre>Paid amount    <span> <i class="fas fa-money-bill-wave"></i> </span><span th:text= "${movieticket.ticketPrize}*${purchase.quantity}"> </span> Taka</pre> </h3> 	
+								
+								</div>			
+							</div>
+							
+							<div class="col-md-10 offset-md-1">
+								<form action="#" 
+									th:object="${purchase}"
+									method="POST"
+									th:action="@{'/user/process-refund-ticket/'+${purchase.purchaseId}}"
+							
+								>
+								
+							
+								
+								<!--Movie seat Quantity-->
+								
+								<div class="row">
+									<div class="col-4"></div>
+									<div class="form-group col-md-6 mt-3">	
+										<input
+											name="quantity"
+			      							type="number"
+			      							class="form-control"
+			      							id="seat_counter_field"
+			      							placeholder="Enter how many tickets you want to Refund"
+			      							required
+			      						/>
+		
+									</div>
+								</div>
+									
+								<div class="container text-center mb-3 mt-3">
+										
+									<button class="btn btn-lg btn-outline-primary bg-primary text-white "> Refund Movie Ticket </button>
+									
+								</div>
+								
+								</form>
+									
+							</div>
+						
+						</div>
+					
+					</div>		
+					
+				</div>
+				
+			</div>
+		</div>
+		
+	</section>
+	
+</body>
+</html>

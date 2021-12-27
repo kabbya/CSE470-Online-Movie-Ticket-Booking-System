@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normaluser/base::layout(~{::section})">
+
+<head>
+	<meta charset = "UTF-8" />
+	<title> This is My watch list page </title>
+</head>
+<body>
+	<section>	
+			<div class="card ms-3 me-3">
+				
+				<div class="card-body">
+					
+					<h1 class="text-center"> My watch list </h1>
+					
+						 <table class="table mt-3">
+  							<thead>
+    							<tr>
+	    							<th scope="col">Ticket ID</th>
+	    							<th scope="col"></th>
+      								<th scope="col">Name</th>
+      								<th scope="col">Date</th>
+      								<th scope="col">Start Time</th>
+      						      	<th scope="col">Ticket Prize</th>
+      						      	<th scope="col">Seat Remaining</th>
+      						      	<th scope="col">Ticket Brought</th>
+      						      	<th scope="col">Payment Status</th>
+      						      	<th scope="col">Action</th>
+      						      	
+    							</tr>
+  							</thead>
+  						<tbody>
+    						<tr th:each="c : ${purchaseList} ">
+    						
+      							<td th:text="${c.getPurchaseId()}"></td>
+	    						<td> 
+    								<img scr="" class="my_movie_poster" th:src="@{'/img/'+${c.getMovieticket().getMovieImage}}" alt="movie poster" />
+	   							</td>
+      							
+      							<td th:text="${c.getMovieticket().getMovieName()}"></td>
+      							<td th:text="${c.getMovieticket().getDate()}"></td>
+      							<td th:text="${c.getMovieticket().getStartTime()}"></td>
+      							<td th:text="${c.getMovieticket().getTicketPrize()}"></td>
+      							<td th:text="${c.getMovieticket().getSeatRemaining()}"></td>
+      							
+      							<td th:text="${c.getQuantity()}"></td>
+      							
+      							<td th:switch="${c.getPaymentStatus()}"> 
+									  <span th:case="0" style="background-color:yellow">On Process</span>
+									  <span th:case="1" style="background-color:green">Confirmed</span>
+									  <span th:case="2" style="background-color:red">Rejected</span> 
+								</td>
+									      						
+      							
+      							<td>      								
+      								<a href="#" th:href="@{'/user/user-refund-ticket/'+${c.getPurchaseId() }}">
+    	  								<button class="btn btn-primary btn-sm"> Cancel Ticket </button>
+      								</a> 						
+
+      							</td>
+   							</tr>
+  						</tbody>
+					</table>
+					
+					<!--Pagination-->
+					
+					<nav aria-label="Page navigation example">
+					
+						  <ul class="pagination">
+							    <li th:if="${currentPage != 0}" class="page-item">
+							    <a th:href="@{'/user/show-user-purchase/'+${currentPage-1}}"  class="page-link" href="#">Previous</a></li>
+							    
+							    <li th:classappend="${currentPage==iter-1?'active':''}"
+							    th:each="iter : ${#numbers.sequence(1,totalPages)}" 
+							    class="page-item">
+							    
+							    <a th:href="@{'/user/show-user-purchase/'+${iter-1}}" class="page-link" href="#"> 
+							    <span th:text="${iter}"> </span>
+							    </a></li>
+							    
+							    <li th:if="${currentPage+1 != totalPages}" class="page-item">
+							    <a th:href="@{'/user/show-user-purchase/'+${currentPage+1}}" class="page-link" href="#">Next</a></li>
+							</ul>	
+					</nav>
+				</div>
+			</div>
+	</section>
+</body>
+</html>

@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -53,6 +54,11 @@ public interface PurchaseRepository extends JpaRepository<Purchase, Integer>{
 	
 	@Query("FROM Purchase as p WHERE p.paymentStatus =:status and p.movieticket.date >=:m")
 	public Page<Purchase> getPurchaseByPaymentStatusAndMovieDate(@Param("status") int status,  @Param("m") Date m,Pageable pageable);
+
+	
+	@Modifying
+	@Query("DELETE FROM Purchase as p WHERE p.purchaseId =:id")
+	void deleteById(@Param("id") int id);
 	
 	
 	
