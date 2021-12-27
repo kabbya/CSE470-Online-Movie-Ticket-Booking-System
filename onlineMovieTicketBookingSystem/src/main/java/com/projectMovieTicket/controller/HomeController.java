@@ -57,11 +57,10 @@ public class HomeController {
 			
 			user.setRole("ROLE_USER");
 			user.setEnable(true);
-			user.setImgUrl("profilePhotoDefault.jpg");
+			user.setImgUrl("User Profile Default Photo.png");
 			user.setPassword(passwordEncoder.encode(user.getPassword()));
 			
 			this.userRepository.save(user);
-			System.out.print(user.toString());
 			model.addAttribute("user", new User() );
 			session.setAttribute("message", new Message("Successfully Registered", "alert-success"));
 			return "signup";

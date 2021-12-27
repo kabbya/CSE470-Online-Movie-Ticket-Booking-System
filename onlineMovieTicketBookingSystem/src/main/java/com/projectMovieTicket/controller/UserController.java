@@ -189,4 +189,14 @@ public class UserController {
 
 	}
 	
+	
+	// user profile 
+	
+	@GetMapping("/user-profile")
+	public String userProfile(Model model) {
+		model.addAttribute("Title", "Profile Page");
+		return "normaluser/user_profile";
+	}
+	
+	
 }
