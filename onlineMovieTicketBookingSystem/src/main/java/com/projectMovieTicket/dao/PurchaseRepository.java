@@ -16,6 +16,8 @@ public interface PurchaseRepository extends JpaRepository<Purchase, Integer>{
 	
 	List<Purchase> findByUserUserId(int userId);
 	
+	List<Purchase> findByMovieticketMovieId(int movieId);
+	
 	public Page<Purchase> findAll(Pageable pageable);
 	
 	@Query("FROM Purchase as p ORDER BY p.movieticket.date")
@@ -30,38 +32,33 @@ public interface PurchaseRepository extends JpaRepository<Purchase, Integer>{
 	@Query("FROM Purchase as p WHERE p.user.userId =:n and p.movieticket.date >=:m ORDER BY p.movieticket.date")
 	public Page<Purchase> getPurchaseByUserAndMovieDate(@Param("n") int n, @Param("m") Date m, Pageable pageable);
 	
-	/*
-	 * Return Purchase List to the User based on current user sorted by movie date
-	 * and purchase status
-	 */
+	
+	// Return Purchase List to the User based on current user sorted by movie date and purchase status
+	 
 	
 	@Query("FROM Purchase as p WHERE p.user.userId =:n ORDER BY p.paymentStatus,p.movieticket.date")
 	public Page<Purchase> getPurchaseByUser(@Param("n") int n, Pageable pageable);
 	
 	
-	/*
-	 * Return Purchase List to the User based on current user, movie date, payment
-	 * status and sorted by movie date
-	 */
+	// Return Purchase List to the User based on current user, movie date, payment status and sorted by movie date
+	 
 	
 	@Query("FROM Purchase as p WHERE p.user.userId =:n and p.movieticket.date >=:m and p.paymentStatus=:status ORDER BY p.movieticket.date")
 	public Page<Purchase> getPurchaseByUserAndMovieDateAndPaymentStatus(@Param("n") int n, @Param("m") Date m, @Param("status") int status, Pageable pageable);
 
 	
-	/*
-	 * Return Purchase List to the Admin based on movie date and payment status
-	 */
+	// Return Purchase List to the Admin based on movie date and payment status
+	 
 	
 	@Query("FROM Purchase as p WHERE p.paymentStatus =:status and p.movieticket.date >=:m")
 	public Page<Purchase> getPurchaseByPaymentStatusAndMovieDate(@Param("status") int status,  @Param("m") Date m,Pageable pageable);
 
 	
+	// Delete purchase id
+	
 	@Modifying
 	@Query("DELETE FROM Purchase as p WHERE p.purchaseId =:id")
 	void deleteById(@Param("id") int id);
 	
-	
-	
-
 
 }

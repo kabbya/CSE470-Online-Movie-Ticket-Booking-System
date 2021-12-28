@@ -35,6 +35,8 @@ import com.projectMovieTicket.entities.Purchase;
 import com.projectMovieTicket.entities.User;
 import com.projectMovieTicket.helper.Message;
 
+import antlr.collections.List;
+
 
 
 @Controller
@@ -251,7 +253,7 @@ public class AdminController {
 			this.purchaseRepository.save(purchase);
 					
 			return "redirect:/admin/show-payment-transaction/0";
-		}
+	}
 	
 	
 	//Show All Payment Transaction
@@ -268,6 +270,37 @@ public class AdminController {
 		m.addAttribute("totalPages", purchaseList.getTotalPages());
 		
 		return "adminuser/show_all_payment_transaction";
+	}
+	
+	
+	// Delete Movie
+	
+	@GetMapping("/delete-movie/{id}")
+	public String deleteMovie(
+			@PathVariable("id") Integer id,
+			Model m, HttpSession session) {
+			
+			Optional<Movieticket> movieTiketOptional = movieticketRepository.findById(id);
+			Movieticket movieTicket = movieTiketOptional.get();
+			
+			java.util.List<Purchase> purchaseList = purchaseRepository.findByMovieticketMovieId( movieTicket.getMovieId());
+			
+			for(int i=0; i<purchaseList.size(); i++) {
+				int purchaseId = purchaseList.get(i).getPurchaseId();
+				int userId = purchaseList.get(i).getUser().getUserId();
+				Optional<Purchase> purchaseOptional = purchaseRepository.findById(purchaseId);
+				Purchase purchase = purchaseOptional.get();
+				if( purchase.getPaymentStatus()==1 ) {
+					User user = userRepository.getById(userId);
+					user.setRefundAmount( purchase.getQuantity() * purchase.getMovieticket().getTicketPrize() + user.getRefundAmount());		
+					userRepository.save(user);
+				}
+				purchaseRepository.deleteById(purchase.getPurchaseId());
+			}
+			
+			session.setAttribute("message", new Message("Movie Deleted Successfully.", "success"));
+			movieticketRepository.deleteById(movieTicket.getMovieId());
+			return "redirect:/admin/show-upcoming-movie/0";
 	}
 	
 	

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+	<meta charset = "UTF-8" />
+	<title> This is home page </title>
+</head>
+<body>
+	<section class="banner d-flex justify-content-center align-items-center" >
+		<div class="container-fluid m1-1">
+			<div class="row">
+				<div class="my_div_right  font-italict">					
+					 <h1> Buy Movie Ticket Online  </h1> 
+					<h3 class="text-secondary font-weight-ligh" > Making life Easy</h3>>						
+								
+				</div>		
+			</div>
+		</div>
+	</section>
+</body>
+</html>
+
+<!--<button class="btn bg-primary btn-lg text-white"> Get Started </button>-->
+
+
+						
+					
