@@ -26,5 +26,10 @@ public interface MovieticketRepository extends JpaRepository<Movieticket, Intege
 	@Modifying
 	@Query("DELETE FROM Movieticket as m WHERE m.movieId =:id")
 	void deleteById(@Param("id") int id);	
-
+	
+	// search by movie name
+	
+	public List<Movieticket> findByMovieNameContaining(String movieName);
+	
+	
 }

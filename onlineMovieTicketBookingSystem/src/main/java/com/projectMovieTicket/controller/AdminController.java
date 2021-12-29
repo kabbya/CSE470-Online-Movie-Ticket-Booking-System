@@ -35,7 +35,6 @@ import com.projectMovieTicket.entities.Purchase;
 import com.projectMovieTicket.entities.User;
 import com.projectMovieTicket.helper.Message;
 
-import antlr.collections.List;
 
 
 

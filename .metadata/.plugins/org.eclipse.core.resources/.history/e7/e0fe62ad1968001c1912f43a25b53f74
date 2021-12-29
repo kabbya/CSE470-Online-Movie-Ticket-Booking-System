@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" th:href = "@{/css/style.css}" />
+    <title th:text="${title}">Base Html</title> 
+  </head>
+  <body>
+  	
+  	<!--navbar-->
+
+<nav class=" fixed-top navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+  
+   <!--change -->
+    <a class="navbar-brand" href="#">Cineplex Entertainment</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    	
+<!--      change position-->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase">
+        
+        <li class="nav-item">
+          <a class="nav-link active" th:href="@{/}" aria-current="page" href="#">Home</a>
+        </li>
+	
+  
+      	<li class="nav-item">
+          <a class="nav-link"  href="#" tabindex="-1" aria-disabled="true">
+          	<span th:text="${user.UserName}"> </span>
+          
+          </a>
+        </li>
+	
+	     <li class="nav-item">
+          <a class="nav-link" th:href="@{/logout}" href="#" tabindex="-1" aria-disabled="true">Logout</a>
+        </li>
+      	
+      	<!--      change link name-->
+        
+  
+      	
+      </ul>
+      
+      
+      <!-- search button
+	<form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      -->
+    
+    </div>
+  </div>
+</nav>
+  		
+	<!--end of navbar-->
+	
+	
+   <!-- start of sidebar-->
+   	  <div class="sidebar mt-5">
+    		
+    		<span onclick="toggleSidebar()" class="crossBtn"> &times; </span>
+    		
+    		<a href="#" th:href="@{/admin/dashboard}" class="item"> <i class="fas fa-home"></i>  Home </a>
+    		<a href="#" th:href="@{/admin/upload-movie}" class="item"> <i class="fas fa-file-video"></i> Upload Movie </a>
+    		<a href="#" th:href="@{/admin/show-upcoming-movie/0}" class="item"> <i class="fas fa-film"></i> View Upcoming Movies </a>
+    		<a href="#" th:href="@{/admin/show-payment-transaction/0}"> <i class="fas fa-user-circle"></i> Update Payment Status </a>
+    		<a href="#" th:href="@{/admin/show-all-payment-transaction/0}" class="item"> <i class="fas fa-cogs"></i> All Transaction History </a>
+    		<a href="#" th:href="@{/logout}" class="item"> <i class="fas fa-sign-out-alt"></i>Logout </a>
+    		<div class="divider"> </div>
+    </div>
+    
+    <!-- end of sidebar-->
+    
+    <!-- start content area -->
+    
+    <div class="content mt-5">
+
+    	<i onclick="toggleSidebar()" class="fas fa-bars m-3"> </i>
+    	
+    	<!--message box-->
+    	
+        <div th:if="${session.message}" class="container">
+	    	<div th:classappend="${'alert-'+session.message.type}" class="alert text-center" role="alert">
+  					<span th:text="${session.message.content}"></span>
+			</div>
+			<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+        </div>
+		
+	    <div th:replace="${content}"> 
+    
+    </div>
+    
+    <!-- end content area -->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    -->
+    <script	th:src = "@{/js/script.js}" > </script>
+  </body>
+</html>
