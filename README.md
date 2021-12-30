@@ -57,3 +57,64 @@ spring.servlet.multipart.max-request-size=-1
 Website Langing Page
 
 <img src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/Landing Page.PNG">
+
+User Registration Form
+
+<imt src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/User%20Registration%20Form.PNG">
+
+User Login Form
+
+<imt src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/Login%20Form.PNG">
+
+User Dashboard
+
+<imt src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/User%20Dashboard.PNG">
+
+Admin Dashboard
+
+<imt src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/Admin%20Dashboard.PNG">
+
+Admin Upload Movie Form
+
+<imt src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/Admin%20Upload%20Movie%20Form.PNG">
+
+Admin Update Movie Form
+
+<imt src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/Admin%20Update%20Movie%20Form.PNG">
+
+Admin Movie List View
+
+<imt src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/Admin%20Movie%20View.PNG">
+
+Use Movie List view
+
+<imt src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/User%20Movielist%20View.jpg">
+
+User Buy Ticket Form
+
+<imt src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/User%20Buy%20Ticket%20Form.PNG">
+
+Admin Payment Update Panel
+
+<imt src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/Admin%20Payment%20Update%20Panel.PNG">
+
+Admin All Payment History View Page
+
+<imt src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/Admin%20All%20Transaction%20History.PNG">
+
+User's Own Payment History
+
+<imt src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/User%20Transaction%20History.PNG">
+
+User's Purchased List Page
+
+<imt src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/User%20Purchase%20List%20View.jpg">
+
+User Refund Ticket
+
+<imt src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/User%20Refund%20Ticket.PNG">
+
+User Profile
+
+<imt src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/User%20Profile.PNG">
+
