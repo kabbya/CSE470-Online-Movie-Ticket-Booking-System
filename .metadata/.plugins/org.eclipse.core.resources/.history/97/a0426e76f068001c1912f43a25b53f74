@@ -224,7 +224,7 @@ public class AdminController {
 		Date date = Date.valueOf(localDate);
 		int status=0;
 		
-		Pageable pageable = PageRequest.of(page, 5);
+		Pageable pageable = PageRequest.of(page, 2);
 		Page<Purchase> purchaseList =  purchaseRepository.getPurchaseByPaymentStatusAndMovieDate(status,date,pageable);
 		
 		m.addAttribute("title", "Payment Transaction");

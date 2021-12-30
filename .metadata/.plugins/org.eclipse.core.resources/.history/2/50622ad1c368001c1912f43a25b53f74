@@ -154,7 +154,7 @@ public class UserController {
 		Date date = Date.valueOf(localDate);
 		int status = 1;
 
-		Pageable pageable = PageRequest.of(page, 5);
+		Pageable pageable = PageRequest.of(page, 3);
 		Page<Purchase> purchaseList = purchaseRepository.getPurchaseByUserAndMovieDateAndPaymentStatus(user.getUserId(), date, status, pageable );
 		
 		m.addAttribute("title", "My Movie Watchlist");
@@ -255,7 +255,7 @@ public class UserController {
 			else {
 				
 				int curQuantity = oldPurchase.getQuantity() - purchase.getQuantity();
-				int refundMoney = purchase.getQuantity() * movieticket.getTicketPrize();
+				int refundMoney = curQuantity * movieticket.getTicketPrize();
 				oldPurchase.setQuantity(curQuantity);
 				user.setRefundAmount(refundMoney + user.getRefundAmount());
 				movieticket.setSeatRemaining(purchase.getQuantity()+movieticket.getSeatRemaining());

@@ -52,7 +52,7 @@ public class HomeController {
 		try {
 			
 			if(!agreement) {
-				throw new Exception(" You have not agreed the terms and condition.");
+				throw new Exception("You have not agreed the terms and condition");
 			}
 			
 			user.setRole("ROLE_USER");
@@ -62,7 +62,7 @@ public class HomeController {
 			
 			this.userRepository.save(user);
 			model.addAttribute("user", new User() );
-			session.setAttribute("message", new Message("Successfully Registered.", "alert-success"));
+			session.setAttribute("message", new Message("Successfully Registered", "alert-success"));
 			return "signup";
 			
 		} catch (Exception e) {

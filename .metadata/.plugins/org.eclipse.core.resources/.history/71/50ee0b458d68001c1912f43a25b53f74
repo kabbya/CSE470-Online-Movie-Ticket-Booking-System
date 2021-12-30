@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="adminuser/base::layout(~{::section})">
+
+<head>
+	<meta charset = "UTF-8" />
+	<title> This is Movie page </title>
+</head>
+<body>
+	<section>	
+			<div class="card ms-3 me-3">
+	
+				<div class="card-body">
+					
+					<h1 class="text-center"> Movie List </h1>
+						
+						<!--search-->
+						
+						<div class="search-container my-4">
+							
+							<input
+								onkeyup="searchByMovieNameAdmin()"
+								id="searchInput"
+								type="text"
+								class="form-control"
+								placeholder="Search Movie"
+							/> 
+							
+							<div class="search-result">
+								
+									<h1> 	This is Result </h1>	
+								
+							</div>
+						
+						</div>
+						
+						 <!--search end-->
+						
+						 <table class="table">
+  							<thead>
+    							<tr>
+    								<th scope="col"></th>
+      								<th scope="col">Name</th>
+      								<th scope="col">Genre</th>
+      								<th scope="col">Date</th>
+      								<th scope="col">Start Time</th>
+      						      	<th scope="col">Ticket Prize</th>
+      						      	<th scope="col">Seat Remaining</th>
+      						      	<th scope="col">Action</th>
+      						      	
+    							</tr>
+  							</thead>
+  						<tbody>
+    						<tr th:each="c : ${movietickets} ">
+    							<td> 
+    								<img scr="" class="my_movie_poster" th:src="@{'/img/'+${c.movieImage}}" alt="movie poster" />
+    								
+    							</td>
+      							<td th:text="${c.movieName}"></td>
+      							<td th:text="${c.genre}"></td>
+      							<td th:text="${c.date}"></td>
+      							<td th:text="${c.startTime}"></td>
+      							<td th:text="${c.ticketPrize}"></td>
+      							<td th:text="${c.seatRemaining}"></td>
+      							<td>
+      								
+      								<a th:href = "@{'/admin/update-movie-form/'+${c.movieId}}" class="btn btn-primary btn-sm"> Update </a>
+      								<a th:href = "@{'/admin/delete-movie/'+${c.movieId}}" class="btn btn-danger btn-sm"> Delete </a>
+      								
+      							</td>
+      							
+   							</tr>
+    						
+  						</tbody>
+					</table>
+					
+					<!--Pagination-->
+					
+					<nav aria-label="Page navigation example">
+					
+						  <ul th:if="${totalPages != 0}" class="pagination">
+							    <li th:if="${currentPage != 0}" class="page-item">
+							    <a th:href="@{'/admin/show-upcoming-movie/'+${currentPage-1}}"  class="page-link" href="#">Previous</a></li>
+							    
+							    <li th:classappend="${currentPage==iter-1?'active':''}"
+							    th:each="iter : ${#numbers.sequence(1,totalPages)}" 
+							    class="page-item">
+							    <a th:href="@{'/admin/show-upcoming-movie/'+${iter-1}}" class="page-link" href="#"> 
+							    <span th:text="${iter}"> </span>
+							    </a></li>
+							    
+							    <li th:if="${currentPage+1 != totalPages}" class="page-item">
+							    <a th:href="@{'/admin/show-upcoming-movie/'+${currentPage+1}}" class="page-link" href="#">Next</a></li>
+							</ul>
+					
+					</nav>
+					
+					
+				</div>
+				
+			</div>
+	</section>
+</body>
+</html>

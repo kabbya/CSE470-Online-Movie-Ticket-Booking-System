@@ -5333,3 +5333,183 @@
 2021-12-29 14:29:26,279 [Worker-508: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-12-29 14:29:26,279 [Worker-508: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2021-12-29 14:29:26,279 [Worker-508: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 14:32:35,050 [Worker-508: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 14:32:35,051 [Worker-508: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 14:32:35,051 [Worker-508: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-29 14:32:35,051 [Worker-508: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2021-12-29 14:32:35,066 [Worker-508: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 14:32:35,066 [Worker-508: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 14:32:35,066 [Worker-508: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 15:48:58,053 [Worker-530: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 15:48:58,057 [Worker-530: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 15:48:58,059 [Worker-530: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-29 15:48:58,059 [Worker-530: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 15:48:58,075 [Worker-530: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 15:48:58,075 [Worker-530: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 15:48:58,075 [Worker-530: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 15:51:27,555 [Worker-531: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 15:51:27,555 [Worker-531: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 15:51:27,562 [Worker-531: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 15:51:27,850 [Worker-531: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 23 resources
+2021-12-29 15:51:27,875 [Worker-531: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 15:51:27,875 [Worker-531: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 15:51:27,875 [Worker-531: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 15:53:02,331 [Worker-536: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 15:53:02,333 [Worker-536: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 15:53:02,333 [Worker-536: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-29 15:53:02,333 [Worker-536: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 15:53:02,343 [Worker-536: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 15:53:02,344 [Worker-536: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 15:53:02,344 [Worker-536: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 15:54:10,224 [Worker-535: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 15:54:10,224 [Worker-535: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 15:54:10,224 [Worker-535: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-29 15:54:10,225 [Worker-535: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 15:54:10,232 [Worker-535: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 15:54:10,232 [Worker-535: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 15:54:10,232 [Worker-535: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 15:55:21,370 [Worker-534: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 15:55:21,370 [Worker-534: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 15:55:21,370 [Worker-534: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-29 15:55:21,371 [Worker-534: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 15:55:21,376 [Worker-534: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 15:55:21,376 [Worker-534: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 15:55:21,376 [Worker-534: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 15:55:57,313 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 15:55:57,313 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 15:55:57,314 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-29 15:55:57,314 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 15:55:57,319 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 15:55:57,319 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 15:55:57,320 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 15:59:32,828 [Worker-543: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 15:59:32,828 [Worker-543: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 15:59:32,829 [Worker-543: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-29 15:59:32,829 [Worker-543: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 15:59:32,871 [Worker-543: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 15:59:32,871 [Worker-543: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 15:59:32,871 [Worker-543: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 16:00:18,985 [Worker-544: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 16:00:18,985 [Worker-544: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 16:00:18,985 [Worker-544: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-29 16:00:18,986 [Worker-544: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 16:00:18,993 [Worker-544: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 16:00:18,993 [Worker-544: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 16:00:18,993 [Worker-544: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 16:01:07,753 [Worker-542: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 16:01:07,753 [Worker-542: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 16:01:07,754 [Worker-542: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-29 16:01:07,755 [Worker-542: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 16:01:07,766 [Worker-542: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 16:01:07,766 [Worker-542: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 16:01:07,766 [Worker-542: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 16:13:13,350 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 16:13:13,351 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 16:13:13,351 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-29 16:13:13,352 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 16:13:13,357 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 16:13:13,357 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 16:13:13,357 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 16:13:42,617 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 16:13:42,617 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 16:13:42,622 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 16:13:42,707 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 24 resources
+2021-12-29 16:13:42,720 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 16:13:42,720 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 16:13:42,720 [Worker-527: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 16:32:22,260 [Worker-548: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 16:32:22,261 [Worker-548: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 16:32:22,262 [Worker-548: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-29 16:32:22,264 [Worker-548: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 16:32:22,274 [Worker-548: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 16:32:22,275 [Worker-548: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 16:32:22,275 [Worker-548: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 16:34:55,914 [Worker-548: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 16:34:55,914 [Worker-548: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 16:34:55,920 [Worker-548: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 16:34:56,052 [Worker-548: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 24 resources
+2021-12-29 16:34:56,069 [Worker-548: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 16:34:56,069 [Worker-548: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 16:34:56,069 [Worker-548: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 17:31:27,203 [Worker-555: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 17:31:27,204 [Worker-555: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 17:31:27,211 [Worker-555: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 17:31:27,250 [Worker-555: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 24 resources
+2021-12-29 17:31:27,267 [Worker-555: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 17:31:27,267 [Worker-555: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 17:31:27,267 [Worker-555: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 17:32:05,880 [Worker-557: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 17:32:05,881 [Worker-557: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 17:32:05,886 [Worker-557: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 17:32:06,061 [Worker-557: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 24 resources
+2021-12-29 17:32:06,079 [Worker-557: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 17:32:06,079 [Worker-557: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 17:32:06,079 [Worker-557: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 17:32:48,977 [Worker-556: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 17:32:48,978 [Worker-556: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 17:32:48,982 [Worker-556: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 17:32:49,004 [Worker-556: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 24 resources
+2021-12-29 17:32:49,020 [Worker-556: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 17:32:49,020 [Worker-556: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 17:32:49,020 [Worker-556: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 17:35:36,791 [Worker-557: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 17:35:36,791 [Worker-557: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 17:35:36,797 [Worker-557: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 17:35:36,810 [Worker-557: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 24 resources
+2021-12-29 17:35:36,827 [Worker-557: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 17:35:36,827 [Worker-557: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 17:35:36,827 [Worker-557: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 21:33:58,460 [Worker-573: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 21:33:58,469 [Worker-573: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 21:33:58,494 [Worker-573: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 21:33:58,836 [Worker-573: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 24 resources
+2021-12-29 21:33:58,865 [Worker-573: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 21:33:58,865 [Worker-573: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 21:33:58,866 [Worker-573: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 22:24:38,312 [Worker-577: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 22:24:38,313 [Worker-577: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 22:24:38,319 [Worker-577: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 22:24:38,427 [Worker-577: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 24 resources
+2021-12-29 22:24:38,447 [Worker-577: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 22:24:38,447 [Worker-577: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 22:24:38,447 [Worker-577: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 22:25:14,993 [Worker-576: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 22:25:14,993 [Worker-576: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 22:25:14,998 [Worker-576: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 22:25:15,183 [Worker-576: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 24 resources
+2021-12-29 22:25:15,195 [Worker-576: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 22:25:15,195 [Worker-576: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 22:25:15,195 [Worker-576: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 23:56:49,596 [Worker-599: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 23:56:49,615 [Worker-599: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 23:56:49,621 [Worker-599: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 23:56:49,703 [Worker-599: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 24 resources
+2021-12-29 23:56:49,745 [Worker-599: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 23:56:49,745 [Worker-599: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 23:56:49,745 [Worker-599: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-29 23:57:06,924 [Worker-598: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 23:57:06,924 [Worker-598: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 23:57:06,924 [Worker-598: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-29 23:57:06,925 [Worker-598: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-29 23:57:06,932 [Worker-598: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-29 23:57:06,932 [Worker-598: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-29 23:57:06,932 [Worker-598: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-30 03:15:48,297 [Worker-605: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-30 03:15:48,300 [Worker-605: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-30 03:15:48,309 [Worker-605: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-30 03:15:48,480 [Worker-605: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 24 resources
+2021-12-30 03:15:48,500 [Worker-605: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-30 03:15:48,500 [Worker-605: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-30 03:15:48,501 [Worker-605: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-30 03:44:14,865 [Worker-608: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-30 03:44:14,866 [Worker-608: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-30 03:44:14,879 [Worker-608: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-30 03:44:14,911 [Worker-608: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 24 resources
+2021-12-30 03:44:14,930 [Worker-608: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-30 03:44:14,930 [Worker-608: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-30 03:44:14,930 [Worker-608: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Desktop\470 online movie ticket\onlineMovieTicketBookingSystem\src\test\resources
+2021-12-30 03:57:36,539 [Worker-614: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-12-30 03:57:36,540 [Worker-614: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2021-12-30 03:57:36,545 [Worker-614: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-30 03:57:36,678 [Worker-614: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 24 resources
+2021-12-30 03:57:36,695 [Worker-614: Launching onlineMovieTicketBookingSystem - OnlineMovieTicketBookingSystemApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.

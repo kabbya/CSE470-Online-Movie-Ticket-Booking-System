@@ -99,6 +99,7 @@ public class AdminController {
 				File saveFile =  new ClassPathResource("static/img").getFile();
 				Path path =   Paths.get(saveFile.getAbsolutePath()+File.separator+file.getOriginalFilename());
 				Files.copy(file.getInputStream(), path , StandardCopyOption.REPLACE_EXISTING);
+				System.out.println("Image uploaded.");
 			}
 			
 			session.setAttribute("message", new Message("New Movie has been successfully uploaded", "success"));
@@ -224,7 +225,7 @@ public class AdminController {
 		Date date = Date.valueOf(localDate);
 		int status=0;
 		
-		Pageable pageable = PageRequest.of(page, 5);
+		Pageable pageable = PageRequest.of(page, 2);
 		Page<Purchase> purchaseList =  purchaseRepository.getPurchaseByPaymentStatusAndMovieDate(status,date,pageable);
 		
 		m.addAttribute("title", "Payment Transaction");
@@ -296,7 +297,7 @@ public class AdminController {
 				purchaseRepository.deleteById(purchase.getPurchaseId());
 			}
 			
-			session.setAttribute("message", new Message("Movie has been Deleted Successfully.", "success"));
+			session.setAttribute("message", new Message("Movie Deleted Successfully.", "success"));
 			movieticketRepository.deleteById(movieTicket.getMovieId());
 			return "redirect:/admin/show-upcoming-movie/0";
 	}
