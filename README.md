@@ -1,9 +1,7 @@
 
-# Online Movie Ticket Buying System
+# Online Movie Ticket Buying System ( [Youtube Link](https://www.youtube.com/watch?v=uHP2OglBEIo) )
 
 An website where people can buy movie ticket online. Admin will upload the movie on the website and User can simply purchase ticket from online without standing at the long queue. The user will pay online, and Admin will manually verify the payment status. The user can also refund ticket.
-
-[Youtube Link](https://www.youtube.com/watch?v=uHP2OglBEIo)
 
 ## Features
 
