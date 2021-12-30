@@ -53,7 +53,6 @@ spring.servlet.multipart.max-request-size=-1
 ```
 ## Screenshots
 
-
 Website Langing Page
 
 <img src="https://github.com/kabbya/CSE470-Online-Movie-Ticket-Booking-System/blob/main/Screenshot/Landing Page.PNG">
